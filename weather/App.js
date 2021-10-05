@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
-import { ScrollView, View, Text } from 'react-native';
-import Weather from './src/Components/Weather';
-import styles from './App.style';
+import React from 'react';
+import { Provider} from 'react-redux';
+import store from './store';
+import Navigation from './src/Components/Navigation/Navigation';
+import SplashScreen from  "react-native-splash-screen";
+// import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-class App extends Component {
-    render() {
-        return(
-          <ScrollView>
-              <View style={styles.container}>
-                  <Text style={styles.heading}>
-                      Weather App
-                  </Text>
-                  <View>
-                      <Weather />
-                  </View>
-              </View>
-          </ScrollView>
-        );
-    };
+const App = () => {
+  React.useEffect(() => {
+    SplashScreen.hide();
+  });
+  return (
+    <Provider store={store}>
+      {/* <SafeAreaProvider style={{ flex: 1, backgroundColor: 'red' }}> */}
+        <Navigation/>
+      {/* </SafeAreaProvider> */}
+    </Provider>
+  );
 };
+
 export default App;
