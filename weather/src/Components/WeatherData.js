@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import styles from './WeatherData.styles';
-import { ScrollView, View, Text, Image } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 
 const WeatherData = ({ data }) => {
   const fahrenheit = (data.main.temp * 1.8 - 459.67).toFixed(2);
@@ -13,7 +13,6 @@ const WeatherData = ({ data }) => {
         <Text style={styles.title}>{data.name} - {data.sys.country}</Text>
         <View style={styles.box}>
           <Text style={styles.boxLabel}>{data.weather[0].description}</Text>
-          <Image style={styles.image} source={{ uri: `http://openweathermap.org/img/wn/${data.weather[0].icon}.png` }} />
         </View>
         <View style={styles.box}>
           <Text style={styles.boxLabel}>Temp</Text>

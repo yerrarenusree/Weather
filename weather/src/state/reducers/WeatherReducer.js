@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { GET_WEATHER, SET_ERROR } from '../types';
+import { GET_WEATHER, SET_ERROR } from '../ActionTypes';
 
 const initialState = {
   data: null,

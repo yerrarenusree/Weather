@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { GET_WEATHER, SET_ERROR } from '../types';
-import { openweathermap_api_key } from '../../config.json';
+import { GET_WEATHER, SET_ERROR } from '../../state/ActionTypes';
+import { openweathermap_api_key } from '../../../config.json';
 
 export const getWeather = (city, onSuccess = () => {}, onError = () => {}) => {
   return async dispatch => {
@@ -13,7 +13,6 @@ export const getWeather = (city, onSuccess = () => {}, onError = () => {}) => {
       }
 
       const resData = await res.json();
-      console.log('resData', resData);
       dispatch({
         type: GET_WEATHER,
         payload: resData,
