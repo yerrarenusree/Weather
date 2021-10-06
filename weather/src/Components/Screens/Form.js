@@ -4,7 +4,7 @@ import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import styles from './Form.styles';
-import { getWeather } from '../../../store/actions/WeatherAction';
+import { getWeather } from '../../services/weather/weather.service';
 
 const Form = () => {
   const [search, setSearch] = useState('');
