@@ -14,8 +14,8 @@ const onBackPress = () => {
   const Navigation = () => (
     <Router backAndroidHandler={() => onBackPress()}>
       <Scene key="root">
-        <Scene key="Weather App" component={FormData}/>
-        <Scene key="WeatherData" component={WeatherData} back={true} />
+        <Scene key="WeatherApp" component={FormData} title="Weather App"/>
+        <Scene key="WeatherData" component={WeatherData} back={true} title="Weather Data" />
         </Scene>
     </Router>
   );
