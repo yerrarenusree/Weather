@@ -3,10 +3,10 @@ import { GET_WEATHER, SET_ERROR } from '../../state/ActionTypes';
 import { openweathermap_api_key } from '../../../config.json';
 
 export const getWeather = (city, onSuccess = () => {}, onError = () => {}) => {
+  
   return async dispatch => {
     try {
       const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${openweathermap_api_key}`);
-
       if (!res.ok) {
         const resData = await res.json();
         throw new Error(resData.message);

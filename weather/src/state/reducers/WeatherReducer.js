@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { GET_WEATHER, SET_ERROR } from '../ActionTypes';
+import { FETCH_WEATHER, SET_ERROR } from '../ActionTypes';
 
 const initialState = {
   data: null,
@@ -8,8 +8,9 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_WEATHER:
+    case FETCH_WEATHER:
       return {
+        ...state,
         data: action.payload,
         error: '',
       };

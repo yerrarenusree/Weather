@@ -4,7 +4,7 @@ import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import styles from './Form.styles';
-import { getWeather } from '../../services/weather/weather.service';
+import { GET_WEATHER } from '../../state/ActionTypes';
 
 const Form = () => {
   const [search, setSearch] = useState('');
@@ -14,7 +14,7 @@ const Form = () => {
     if (search === '') {
       return Alert.alert('Validation', 'City name is required!', [{ text: 'OK' }]);
     }
-    dispatch(getWeather(search));
+    dispatch({type: GET_WEATHER, payload: search});
     Actions.push('WeatherData');
     setSearch('');
   };
