@@ -9,7 +9,6 @@ export function* sagaWatcher() {
 export function* saga({payload}) {
   try {
     const res = yield fetch(`https://api.openweathermap.org/data/2.5/weather?q=${payload}&appid=${openweathermap_api_key}`);
-    console.log(`https://api.openweathermap.org/data/2.5/weather?q=${payload}&appid=${openweathermap_api_key}`);
     if (!res.ok) {
       const resData = yield res.json();
       throw new Error(resData.message);
