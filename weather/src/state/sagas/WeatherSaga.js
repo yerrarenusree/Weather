@@ -8,13 +8,13 @@ export function* sagaWatcher() {
 
 export function* saga({payload}) {
   try {
-    const res = yield fetch(`https://api.openweathermap.org/data/2.5/weather?q=${payload}&appid=${openweathermap_api_key}`);
+    const res = yield fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${payload}&appid=${openweathermap_api_key}`);
     if (!res.ok) {
       const resData = yield res.json();
       throw new Error(resData.message);
     }
     const weatherData = yield res.json();
-    yield put({ type: FETCH_WEATHER, payload: weatherData });
+    yield put({ type: FETCH_WEATHER, payload: weatherData.list});
   } catch (err) {
     yield put({type: SET_ERROR , payload: err.message});
   }

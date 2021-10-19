@@ -1,43 +1,14 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    containerInner: {
-      paddingHorizontal: 20,
-    },
-    title: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      textAlign: 'center',
-      marginBottom: 20,
-    },
+    container: { flex: 1, padding: 16, paddingTop: 20 },
     box: {
-      borderWidth: 1,
+      borderWidth: 2,
       borderColor: '#ddd',
-      padding: 15,
-      marginBottom: 10,
+      backgroundColor: '#fff',
+      padding: 20,
+      marginBottom: 20,
       alignItems: 'center',
-    },
-    boxLabel: {
-      textTransform: 'uppercase',
-      fontSize: 12,
-      letterSpacing: 1,
-      marginBottom: 5,
-    },
-    boxText: {
-      fontSize: 16,
-      fontWeight: 'bold',
-    },
-    image: {
-      width: 50,
-      height: 40,
-      alignContent: 'center',
-    },
-    tempContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignSelf: 'stretch',
+      borderRadius: 12,
     },
   });
